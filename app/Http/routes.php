@@ -58,7 +58,7 @@ Route::get(BRANDS . '/{brand}/{product}/{brand_id}/{product_id}', 'BrandControll
 Route::get(BRANDS_FR . '/{brand}/{product}/{brand_id}/{product_id}', 'BrandController@marqueproduit');
 // ********** BRANDS ********** //
 
-// ********** PRODUCTS ********** //
+// ********** INVENTORY ITEMS ********** //
 Route::get(PRODUCTS . '/{product}/{product_id}', 'InventoryItemController@products');
 Route::get(PRODUCTS_FR . '/{product}/{product_id}', 'InventoryItemController@produits');
 
@@ -70,7 +70,7 @@ Route::get(PRODUCTS_FR . '/{product}/{type}/{product_id}/{type_id}', 'InventoryI
 
 Route::get(PRODUCTS . '/{product}/{type}/{product_id}/{type_id}/brand/{brand}/{brand_id}', 'InventoryItemController@typesen');
 Route::get(PRODUCTS_FR . '/{product}/{type}/{product_id}/{type_id}/marque/{brand}/{brand_id}', 'InventoryItemController@typesfr');
-// ********** PRODUCTS ********** //
+// ********** INVENTORY ITEMS ********** //
 
 // ****************************** ABOUT US ****************************** //
 Route::get(ABOUTUSURL, 'AboutUsController@aboutus');
@@ -103,16 +103,6 @@ Route::get(EDITORIALSURL_FR, 'EditorialController@editorialsfr');
 Route::get(EVENTSURL, 'EventController@events');
 Route::get(EVENTSURL_FR, 'EventController@eventsfr');
 // ********** EVENTS ********** //
-
-View::composer('layout.partials.header', function($view)
-{
-	$view->with('Products', \App\Models\Product::getProducts());
-});
-
-View::composer('layout.partials.footer', function($view)
-{
-	$view->with('Products', \App\Models\Product::getProducts());
-});
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

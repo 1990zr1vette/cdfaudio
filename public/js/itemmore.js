@@ -1,4 +1,3 @@
-
 if ($('#lang').val() == 'EN')
 {
 	var more = '[+] MORE';
@@ -10,36 +9,42 @@ else
 	var less = '[-] MOIN';	
 }
 
-$.each($('.item'),function(){
+var InventoryItemDescriptionHeight = 160;
+
+$.each($('.InventoryItem'),function(index)
+{
+	var InventoryItemDescription = $(this).find('.InventoryItemDescription');
 	
-	if ($(this).find('.itemdescription').height() > 155)
+	if ($(InventoryItemDescription).height() < InventoryItemDescriptionHeight)
 	{
-		$(this).find('.itemmore span').attr('for', $(this).find('.itemdescription').height() - 155).attr('data', '0');
+		$(this).find('.InventoryItemMore').css('display','none');
 	}
 	else
-	{
-		$(this).find('.itemmore span').css('display', 'none');
-		$(this).css('height', 210);
+	{			
+		$(this).find('.InventoryItemMore span').attr('data-expand', $(this).height() - InventoryItemDescriptionHeight);
+		$(InventoryItemDescription).css('height', InventoryItemDescriptionHeight + 'px');
 	}
-	
-});
+})
 
-$('.itemmore span').click(function(){
-	var parent = $(this).parent().parent();
-	var expand = 0;
+$('.InventoryItemMore span').click(function()
+{
+	var InventoryItem = $(this).parent().parent();
+	var InventoryItemDescription = $(InventoryItem).find('.InventoryItemDescription');
 	
 	if ($(this).attr('data') == '0')
-	{
+	{	
 		$(this).attr('data', '1').html(less);
-		expand = parseInt($(this).attr('for'));
+		var expand = parseInt($(this).attr('data-expand'));
+		$(this).parent().animate({top:expand});
 	}
 	else
 	{
 		$(this).attr('data', '0').html(more);
-		expand = parseInt($(this).attr('for')) * -1;
+		var expand = parseInt($(this).attr('data-expand')) * -1;
+		$(this).parent().animate({top:0});
 	}
 	
-	$(parent).animate({height:$(parent).height() + expand});
-	$(parent).find('.rightcolumn').animate({height:$(parent).find('.rightcolumn').height() + expand});
-	$('footer').animate({top:$('footer').offset().top + expand});
+	$(InventoryItem).animate({height:$(InventoryItem).height() + expand});
+	$('footer').animate({top:$('footer').offset().top + expand});	
+	$(InventoryItemDescription).animate({height:$(InventoryItemDescription).height() + expand});
 });

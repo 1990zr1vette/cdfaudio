@@ -33,30 +33,33 @@
 					</div>
 				</div>
 			</div>
-			
+
 			<script src="js/dropdowndiv.js" type="text/javascript"></script>
 			<script>$('#brandselect li').click(function(){var url = "{{ $brandurl }}" + $(this).html().replace(/\ /g, '-').toLowerCase() + '/' + $(this).attr('data'); $(this).parent().css('display','none');window.location = url;});</script>
 						
 			<div class="spacer20"></div>
-			
+
 @foreach($InventoryItems as $InventoryItem)
-				<div class="item">
-					<div class="spacer20"></div>
-					<div class="leftcolumn">
+			<div class="InventoryItem">
+				<div class="spacer20"></div>
+				<div class="InventoryItemInfo">
+					<div class="InventoryItemImage">
 						<img src="images/{{ $InventoryItem->image }}" />
 					</div>
-					<div class="rightcolumn">
-						<h3><span>{{ $InventoryItem->brand }} {{ $InventoryItem->model }}</span></h3>
-						<div class="itemdescription">{{ languages($InventoryItem->description, $InventoryItem->description_fr) }}</div>					
-					</div>	
-					<div class="itemmore"><span>[+] {{ languages('MORE', 'PLUS') }}</span></div>
+					<div class="InventoryItemDetails">
+						<h3>{{ $InventoryItem->brand }} {{ $InventoryItem->model }}</h3>
+						<p class="InventoryItemDescription">{{ languages($InventoryItem->description, $InventoryItem->description_fr) }}</p>
+					</div>
 				</div>
+				<div class="InventoryItemMore">
+					<span data="0">[+] {{ languages('MORE', 'PLUS') }}</span>
+				</div>				
+			</div>
 			<div class="spacer10"></div>
-@endforeach	
+@endforeach
 
-			<input type="hidden" id="lang" value="{{ Session::get('lang') }}" />
+			<div class="spacer20"></div>
+
+			<input type="hidden" id="lang" value="{{ Session::get('lang') }}" />			
 			<script src="js/itemmore.js" type="text/javascript"></script>
-			
-			<div class="spacer20"></div>			
-
 @endsection

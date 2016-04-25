@@ -1,39 +1,42 @@
 
 if ($('#lang').val() == 'EN')
 {
-	var more = 'MORE';
-	var less = 'LESS';
+	var more = '[+] MORE';
+	var less = '[-] LESS';
 }
 else
 {
-	var more = 'PLUS';
-	var less = 'MOIN';
+	var more = '[+] PLUS';
+	var less = '[-] MOIN';	
 }
 
-$.each($('.brand'),function(){	
-	if ($(this).find('.brandinfo').height() > 130)
+$.each($('.BrandItem'),function(index){	
+	var BrandDetails = $(this).find('.BrandDetails');	
+	if ($(BrandDetails).height() < 180)
 	{
-		var difference = $(this).find('.brandinfo').height() - 130;
-		$(this).append('<div class="moretag"><span for="0" data="' + difference + '">[+] ' + more + '</span></div>');
-	}
-	$(this).find('.brandinfo').css('height', '130px');
-});
-
-$('.moretag span').click(function(){
-	var brand = $(this).parent().parent();
-	var expand = 0;
-	if ($(this).attr('for') == '0')
-	{
-		$(this).attr('for','1').html('[-] ' + less);
-		expand = parseInt($(this).attr('data'));
+		$(this).find('.BrandMore').css('display', 'none');
 	}
 	else
 	{
-		$(this).attr('for','0').html('[+] ' + more);
-		expand = parseInt($(this).attr('data')) * -1;
+		$(this).find('.BrandMore span').attr('expand', $(BrandDetails).height() - 180);
+	}	
+	$(BrandDetails).css('height', '180px');	
+});
+
+$('.BrandMore span').click(function(){
+	var BrandItem = $(this).parent().parent();
+	var BrandDetails = $(BrandItem).find('.BrandDetails');
+	if ($(this).attr('data') == '0')
+	{
+		$(this).attr('data', '1').html(less);
+		var expand = parseInt($(this).attr('expand'));
 	}
-	
-	$(brand).animate({height:$(brand).height() + expand});
-	$(brand).find('.brandinfo').animate({height:$(brand).find('.brandinfo').height() + expand});
+	else
+	{
+		$(this).attr('data', '0').html(more);
+		var expand = parseInt($(this).attr('expand')) * -1;
+	}
+	$(BrandDetails).animate({height:$(BrandDetails).height() + expand});
+	$(BrandItem).animate({height:$(BrandItem).height() + expand});
 	$('footer').animate({top:$('footer').offset().top + expand});	
 });

@@ -117,7 +117,7 @@ class InventoryItemController extends Controller {
 		$ProductBrands = BrandProduct::with('Brand')
 			->where('product_id', $product_id)
 			->get();
-		
+
 		$InventoryItems = InventoryItem::getInventoryItems($brand_id, $product_id, null);
 		
 		$url_ol = languages(PRODUCTS_FR, PRODUCTS) . '/' .  

@@ -4,6 +4,7 @@
 html, body
 {
 	width:100%;
+	min-width:640;
 	-overflow-x:hidden;
 	margin:0;
 	padding:0;
@@ -131,11 +132,14 @@ header nav ul li.topli:last-child, header nav ul li.bottomli:last-child
 	background:none;
 }
 
+
 #topnav
 {
 	position:absolute;
 	top:0px;
-	left:0px;	
+	left:0px;
+	height:47px;
+	width:100%;
 }
 
 #cdf
@@ -196,6 +200,8 @@ header nav ul li.topli:last-child, header nav ul li.bottomli:last-child
 	position:absolute;
 	top:133px;
 	left:0px;
+	height:47px;
+	width:100%;	
 }
 
 .submenu
@@ -213,84 +219,6 @@ header nav ul li.topli:last-child, header nav ul li.bottomli:last-child
 	background:rgba(0, 0, 0, 0) url("../images/toprow.png") repeat-x scroll left top;
 }
 
-.spacer5{height:5px; width:100%;}
-.spacer10{height:10px; width:100%;}
-.spacer15{height:15px; width:100%;}
-.spacer20{height:20px; width:100%;}
-.spacer25{height:25px; width:100%;}
-.spacer30{height:30px; width:100%;}
-.spacer35{height:35px; width:100%;}
-.spacer40{height:40px; width:100%;line-height:40px;}
-.spacer45{height:45px; width:100%;}
-.spacer50{height:50px; width:100%;}
-.spacer55{height:55px; width:100%;}
-.spacer60{height:60px; width:100%;}
-.spacer65{height:65px; width:100%;}
-.spacer70{height:70px; width:100%;}
-.spacer75{height:75px; width:100%;}
-.spacer80{height:80px; width:100%;}
-.spacer85{height:85px; width:100%;}
-.spacer90{height:90px; width:100%;}
-.spacer95{height:95px; width:100%;}
-.spacer100{height:100px; width:100%;}
-
-/********** BRANDS **********/
-div.brand
-{
-	height:220px;
-	width:96%; 
-	margin:0 auto; 
-	border:1px solid #cfcfcf; 
-	border-radius:15px; 
-	background-color:#fff;
-}
-
-div.brandtitle
-{
-	height:50px;
-	width:100%;
-	line-height:50px;
-}
-
-div.brandimage
-{
-	height:130px; 
-	width:20%; 
-	margin-left:2%;
-	float:left;
-}
-
-div.brandimage img
-{
-	height:100%; 
-	width:100%; 
-}
-
-div.brandinfo
-{
-	width:calc(75% - 4px); 
-	margin-left:2%;
-	padding-right:1%;
-	float:left;
-	white-space:pre-wrap;
-	overflow:hidden;
-}
-
-div.brand div.moretag
-{
-	height:40px;
-	width:76%;
-	line-height:40px;
-	margin-left:24%;
-	float:left;
-	color:rgb(231,147,26);
-}
-
-div.brand div.moretag span
-{
-	cursor:pointer;
-}
-/********** BRANDS **********/
 
 /********** HOME SLIDER **********/
 #slider img
@@ -334,53 +262,6 @@ div.brand div.moretag span
 	width:70%; 
 }
 /********** HOME SLIDER **********/
-
-/********** FOOTER **********/
-footer a
-{
-	color:#fff;
-	cursor:pointer;
-}
-
-footer a:hover
-{
-	color:rgb(231, 147, 26);
-}
-
-footer h3
-{
-	text-transform:uppercase;
-	text-align:left;
-	color:#fff;
-}
-
-footer span
-{
-	color:#fff;
-}
-
-div.footercolumn
-{
-	width:16.66%; 
-	height:100%; 
-	float:left;
-}
-
-div.footercolumn span
-{
-	display:inline-block;
-	height:30px; 
-	width:100%;
-	line-height:30px;
-}
-
-div.footercolumn img.socialimg
-{
-	height:32px;
-	width:32px;
-	border-radius:4px;
-}
-/********** FOOTER **********/
 
 /********** HOME PAGE ANNOUNCEMENTS **********/
 #announcements 
@@ -608,7 +489,8 @@ div.footercolumn img.socialimg
 #event
 {
 	height:460px;
-	width:100%;
+	width:96%;
+	margin:0 auto;
 }
 
 #eventimage
@@ -616,7 +498,6 @@ div.footercolumn img.socialimg
 	height:400px; 
 	width:38%; 
 	float:left;
-	margin-left:2%;	
 }
 
 #eventimage img
@@ -673,6 +554,127 @@ div.footercolumn img.socialimg
 }
 /********** HOME PAGE EVENT **********/
 
+/********** BRANDS **********/
+div.BrandItem
+{
+	height:260px; 
+	width:96%; 
+	margin:0 auto; 
+	background-color:#fff; 
+	border:1px solid #cfcfcf; 
+	border-radius:15px;
+}
+
+div.BrandTitle
+{
+	height:40px; 
+	width:100%; 
+	line-height:40px;
+}
+
+div.BrandInfo
+{
+	height:180px; 
+	width:100%;
+}
+
+div.BrandImage
+{
+	height:100%; 
+	width:30%; 
+	float:left;
+}
+
+div.BrandImage img
+{
+	height:100%; 
+	width:96%; 
+	margin-left:2%; 
+	border-radius:5px;
+}
+
+div.BrandDetails
+{
+	width:calc(70% - 40px); 
+	float:left; 
+	margin-left:20px; 
+	white-space:pre-wrap; 
+	overflow:hidden;
+}
+
+div.BrandMore
+{
+	height:30px; 
+	width:100%; 
+	line-height:30px; 
+	text-align:left;
+}
+
+div.BrandMore span
+{
+	float:left; 
+	margin-left:calc(30% + 20px); 
+	cursor:pointer; 
+	color:rgb(231,147,26);
+}
+
+div.brand
+{
+	height:220px;
+	width:96%; 
+	margin:0 auto; 
+	border:1px solid #cfcfcf; 
+	border-radius:15px; 
+	background-color:#fff;
+}
+
+div.brandtitle
+{
+	height:50px;
+	width:100%;
+	line-height:50px;
+}
+
+div.brandimage
+{
+	height:130px; 
+	width:20%; 
+	margin-left:2%;
+	float:left;
+}
+
+div.brandimage img
+{
+	height:100%; 
+	width:100%; 
+}
+
+div.brandinfo
+{
+	width:calc(75% - 4px); 
+	margin-left:2%;
+	padding-right:1%;
+	float:left;
+	white-space:pre-wrap;
+	overflow:hidden;
+}
+
+div.brand div.moretag
+{
+	height:40px;
+	width:76%;
+	line-height:40px;
+	margin-left:24%;
+	float:left;
+	color:rgb(231,147,26);
+}
+
+div.brand div.moretag span
+{
+	cursor:pointer;
+}
+/********** BRANDS **********/
+
 /********** BRAND SLIDER **********/
 #brandslider
 {
@@ -700,40 +702,6 @@ div.footercolumn img.socialimg
 	height:200px;
 }
 /********** BRAND SLIDER **********/
-
-#banner
-{
-	height:300px; 
-	width:100%;overflow:hidden;
-}
-
-#bannertitle
-{
-	position:relative; 
-	z-index:3; 
-	color:#fff;
-}
-
-span.overlay 
-{
-	position:absolute;
-	height:0px;
-	width:0px;
-	z-index:9999999;
-	cursor:pointer;
-	background:rgba(0, 0, 0, 0.5) url("../images/trigger_overlay.png") no-repeat scroll center center / 24px 51px;
-}
-
-.banner_overlay 
-{
-	position:absolute;
-	top:0;
-	left:0;
-	height:300px;
-	width:100%;
-	z-index:2;
-	background: rgba(0, 0, 0, 0) url("../images/bg_banner_overlay.png") repeat scroll center center / 2px auto;
-}
 
 /********** BRAND PAGE ITEM **********/
 #brandinfo
@@ -799,12 +767,19 @@ span.overlay
 
 div.item
 {
-	height:240px;
-	width:96%;
-	margin:0 auto;
+	height:240px; 
+	width:96%; 
+	margin:0 auto; 	
 	border:1px solid #cfcfcf; 
-	border-radius:20px; 
-	background-color:#fff;	
+	border-radius:15px; 
+	background-color:#fff;
+	
+	-height:240px;
+	-width:96%;
+	-margin:0 auto;
+	-border:1px solid #cfcfcf; 
+	-border-radius:20px; 
+	-background-color:#fff;	
 }
 
 div.item span.img
@@ -829,7 +804,6 @@ div.item span.info
 	width:calc(100% - 364px);
 	float:left;
 	margin-left:20px;
-	border:1px solid red;
 	overflow:hidden;
 }
 
@@ -851,9 +825,9 @@ div.item div.leftcolumn img
 div.item div.rightcolumn
 {
 	height:180px; 
-	overflow:hidden; 
 	width:70%; 
 	float:left;
+	overflow:hidden; 
 }
 
 div.item div.rightcolumn h3
@@ -869,17 +843,22 @@ div.item div.itemdescription
 div.item div.itemmore
 {
 	height:30px;
-	width:100%;
-	line-height:30px;
-	float:left;
-	padding-left:30%;
+	width:100%; 
+	float:left; 
 }
 
 div.item div.itemmore span
 {
+	position:relative; 
+	left:30%;
 	cursor:pointer;
 	color:rgb(231,147,26);
-	font-weight:600;
+	font-weight:900;
+}
+
+div.item p.itemp
+{
+	padding-right:20px;
 }
 
 #brandheading
@@ -891,88 +870,15 @@ div.item div.itemmore span
 }
 /********** BRAND PAGE ITEM **********/
 
-.btn 
+div.inventoryitem
 {
-	-moz-user-select: none;
-	background-image: none;
-	border: 1px solid transparent;
-	border-radius: 4px;
-	cursor: pointer;
-	display: inline-block;
-	font-size: 14px;
-	font-weight:600;
-	line-height: 1.42857;
-	margin-bottom: 0;
-	padding: 6px 12px;
-	text-align: center;
-	vertical-align: middle;
-	white-space: nowrap;
+	height:240px; 
+	width:96%; 
+	margin:0 auto; 	
+	border:1px solid #cfcfcf; 
+	border-radius:15px; 
+	background-color:#fff;	
 }
-
-.btn-primary 
-{
-    color:#fff;
-	border-color:#204d74;
-	background-color:#286090;  
-}
-
-.btn-primary:hover
-{
-    border-color:#2e6da4; 
-	background-color:#337ab7;	
-}
-
-/********** BUTTON DROPDOWN **********/
-.dropdowndiv
-{
-	height:50px; 
-	width:100%; 
-	text-align:center;
-}
-
-.dropdownrow
-{
-	height:50px;
-	margin:0 auto;
-}
-
-ul.dropdown
-{
-	display:inline-block;
-	visibility:hidden;
-	z-index:9999;
-	position:relative;
-	margin-top:1px;
-}
-
-ul.dropdown li
-{
-	float:none;
-	-moz-user-select: none;
-	background-image: none;
-	border: 1px solid transparent;
-	border-radius: 4px;
-	cursor: pointer;
-	font-size: 14px;
-	font-weight:600;
-	line-height: 1.42857;
-	margin-bottom: 0;
-	padding: 8px 12px;
-	text-align: center;
-	vertical-align: middle;
-	white-space: nowrap;
-	background-color: #286090;
-	border-color: #204d74;
-    color:#fff;
-	margin-bottom:1px;
-}
-
-ul.dropdown li:hover
-{
-	background-color: #337ab7;
-    border-color: #2e6da4;  
-}
-/********** BUTTON DROPDOWN **********/
 
 /********** EVENT **********/
 .event, .editorial
@@ -1316,6 +1222,270 @@ ul.dropdown li:hover
 }
 /********** MEMBER **********/
 
+/********** BANNER **********/
+{
+	position:absolute; 
+	left:0px; 
+	height:80px; 
+	line-height:80px; 
+	width:calc(100% - 40px); 
+	padding-left:40px; 
+	color:#fff; 
+	z-index:50;
+	overflow:hidden;
+	background-color:rgba(0,0,0,0.6);
+}
+
+#messages span.messagetitle
+{
+	display:inline-block; 
+	margin-right:20px;
+	font-weight:900;
+	font-size:20px;
+}
+
+#messages span.message
+{
+	display:inline-block; 
+	position:absolute;
+	width:70%; 
+}
+/********** HOME SLIDER **********/
+
+#banner
+{
+	height:300px; 
+	width:100%;overflow:hidden;
+}
+
+#bannertitle
+{
+	position:relative; 
+	z-index:3; 
+	color:#fff;
+}
+
+span.overlay 
+{
+	position:absolute;
+	height:0px;
+	width:0px;
+	z-index:9999999;
+	cursor:pointer;
+	background:rgba(0, 0, 0, 0.5) url("../images/trigger_overlay.png") no-repeat scroll center center / 24px 51px;
+}
+
+.banner_overlay 
+{
+	position:absolute;
+	top:0;
+	left:0;
+	height:300px;
+	width:100%;
+	z-index:2;
+	background: rgba(0, 0, 0, 0) url("../images/bg_banner_overlay.png") repeat scroll center center / 2px auto;
+}
+/********** BANNER **********/
+
+/********** FOOTER **********/
+footer a
+{
+	color:#fff;
+	cursor:pointer;
+}
+
+footer a:hover
+{
+	color:rgb(231, 147, 26);
+}
+
+footer h3
+{
+	text-transform:uppercase;
+	text-align:left;
+	color:#fff;
+}
+
+footer span
+{
+	color:#fff;
+}
+
+div.footercolumn
+{
+	width:16.66%; 
+	height:100%; 
+	float:left;
+}
+
+div.footercolumn span
+{
+	display:inline-block;
+	height:30px; 
+	width:100%;
+	line-height:30px;
+}
+
+div.footercolumn img.socialimg
+{
+	height:32px;
+	width:32px;
+	border-radius:4px;
+}
+/********** FOOTER **********/
+
+/********** BUTTON DROPDOWN **********/
+.btn 
+{
+	-moz-user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 14px;
+	font-weight:600;
+	line-height: 1.42857;
+	margin-bottom: 0;
+	padding: 6px 12px;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+.btn-primary 
+{
+    color:#fff;
+	border-color:#204d74;
+	background-color:#286090;  
+}
+
+.btn-primary:hover
+{
+    border-color:#2e6da4; 
+	background-color:#337ab7;	
+}
+
+.dropdowndiv
+{
+	height:50px; 
+	width:100%; 
+	text-align:center;
+}
+
+.dropdownrow
+{
+	height:50px;
+	margin:0 auto;
+}
+
+ul.dropdown
+{
+	display:inline-block;
+	visibility:hidden;
+	z-index:9999;
+	position:relative;
+	margin-top:1px;
+}
+
+ul.dropdown li
+{
+	float:none;
+	-moz-user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight:600;
+	line-height: 1.42857;
+	margin-bottom: 0;
+	padding: 8px 12px;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+	background-color: #286090;
+	border-color: #204d74;
+    color:#fff;
+	margin-bottom:1px;
+}
+
+ul.dropdown li:hover
+{
+	background-color: #337ab7;
+    border-color: #2e6da4;  
+}
+/********** BUTTON DROPDOWN **********/
+
+/********** InventoryItem **********/
+div.InventoryItem
+{
+	height:260px; 
+	width:96%; 
+	margin:0 auto; 
+	border:1px solid #cfcfcf; 
+	border-radius:15px; 
+	background-color:#fff;
+}
+
+div.InventoryItemInfo
+{
+	height:190px; 
+	width:100%;	
+}
+
+div.InventoryItemImage
+{
+	height:190px; 
+	width:30%; 
+	float:left; 
+	margin-left:20px;
+}
+
+div.InventoryItemImage img
+{
+	height:100%; 
+	width:100%; 
+	border-radius:5px;
+}
+
+div.InventoryItemDetails
+{
+	height:190px; 
+	width:calc(69% - 40px); 
+	float:left;
+}
+
+div.InventoryItemDetails h3
+{
+	height:30px; 
+}
+
+p.InventoryItemDescription
+{
+	overflow:hidden; 
+	white-space:pre-wrap; 
+	padding-left:20px;
+}
+
+div.InventoryItemMore
+{
+	position:relative;
+	height:30px; 
+	width:100%; 
+	line-height:30px;
+}
+
+div.InventoryItemMore span
+{
+	font-weight:900; 
+	color:rgb(231,147,26); 
+	cursor:pointer; 
+	margin-left:calc(30% + 40px);
+}
+
+/********** InventoryItem **********/
+
 .moretag
 {
 	display:inline-block;
@@ -1330,15 +1500,80 @@ ul.dropdown li:hover
 	font-weight:900;
 }
 
-div.errormessage
+.spacer5{height:5px; width:100%;}
+.spacer10{height:10px; width:100%;}
+.spacer15{height:15px; width:100%;}
+.spacer20{height:20px; width:100%;}
+.spacer25{height:25px; width:100%;}
+.spacer30{height:30px; width:100%;}
+.spacer35{height:35px; width:100%;}
+.spacer40{height:40px; width:100%;line-height:40px;}
+.spacer45{height:45px; width:100%;}
+.spacer50{height:50px; width:100%;}
+.spacer55{height:55px; width:100%;}
+.spacer60{height:60px; width:100%;}
+.spacer65{height:65px; width:100%;}
+.spacer70{height:70px; width:100%;}
+.spacer75{height:75px; width:100%;}
+.spacer80{height:80px; width:100%;}
+.spacer85{height:85px; width:100%;}
+.spacer90{height:90px; width:100%;}
+.spacer95{height:95px; width:100%;}
+.spacer100{height:100px; width:100%;}
+
+#mobileheader
 {
+	position:absolute;
+	top:0px;
+	left:0px;
 	height:100px;
+	background:none; 
+	background-color:#000;
+}
+
+div.whiteline
+{
+	height:2px;
 	width:90%;
-	margin:0 auto;
-	line-height:100px;
-	font-size:20px;
-	border:1px solid #cfcfcf;
-	border-radius:15px;
+	margin-left:2%;
 	background-color:#fff;
-	text-align:center;
+}
+
+#mobilenav
+{
+	position:absolute;
+	top:100px;
+	left:-60%;
+	width:60%;
+	background-color:#000;
+	z-index:9999999;
+}
+
+#mobilenav ul
+{
+}
+
+#mobilenav ul li
+{
+	height:120px;
+	float:none;
+	line-height:120px;
+	font-size:32px;
+	border-bottom:2px solid rgb(69,77,84);
+}
+
+#mobilenav ul li
+{
+	float:none;
+}
+
+#mobilenav ul li.topli
+{
+	color:#fff;
+	background-color:rgb(231,147,26);
+}
+
+#mobilenav ul li a
+{
+	color:#fff;
 }

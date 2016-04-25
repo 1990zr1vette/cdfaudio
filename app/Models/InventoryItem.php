@@ -26,10 +26,11 @@ class InventoryItem extends Model {
 	
 	public static function getInventoryItems($brand_id, $product_id, $product_type_id)
 	{		
-		$sql = "SELECT i.*, b.brand FROM inventory_items AS i ";
+		$sql  = "SELECT i.*, b.brand FROM inventory_items AS i ";
 		$sql .= "JOIN brands AS b ";
 		$sql .= "ON i.brand_id=b.id ";
 		$sql .= "WHERE i.product_id=" . $product_id . " ";
+		
 		if ($brand_id)
 		{
 			$sql .= "AND i.brand_id=" . $brand_id . " ";
@@ -38,6 +39,7 @@ class InventoryItem extends Model {
 		{
 			$sql .= "AND i.product_type_id=" . $product_type_id . " ";
 		}
+
 		$sql .= "AND i.active=1 ";
 		$sql .= "ORDER BY b.brand, i.model ";
 		

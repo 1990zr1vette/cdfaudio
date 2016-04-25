@@ -1,6 +1,7 @@
 @extends('layout/default')
 
 @section('main')
+			<!-- ***** SLIDER ***** -->
 			<div id="slider" style="overflow:hidden;">
 				<img src="images/slider/slider1.jpg" />
 				<img src="images/slider/slider2.jpg" />
@@ -18,7 +19,9 @@
 			</div>
 			
 			<script src="js/homeslider.js" type="text/javascript"></script>
-			
+			<!-- ***** SLIDER ***** -->
+
+			<!-- ***** ANNOUNCEMENTS ***** -->
 			<div id="announcements">
 				<div class="spacer85"></div>
 				<img id="announcementsicon" src="images/icon_announcements.png" />
@@ -31,7 +34,9 @@
 					</a>				
 				</div>
 			</div>
-
+			<!-- ***** ANNOUNCEMENTS ***** -->
+			
+			<!-- ***** BRANDS ***** -->
 			<div id="brands">
 				<div class="spacer20"></div>
 				<h3>{{ languages('OUR BRANDS', 'NOS MARQUES') }}</h3>
@@ -46,7 +51,9 @@
 			
 			<script src="js/wrap.js" type="text/javascript"></script>
 			<script>$('.brandcolumn').wrapEvery(4, '<div class="brandRow">');</script>
+			<!-- ***** BRANDS ***** -->
 			
+			<!-- ***** EDITORIAL ***** -->
 			<div id="editorial">
 				<div class="spacer30"></div>
 				<div id="editorialinfo">
@@ -69,7 +76,9 @@
 					<img src="images/{{ $Editorial->image }}" />
 				</div>	
 			</div>
+			<!-- ***** EDITORIAL ***** -->
 			
+			<!-- ***** EVENT ***** -->
 			<div id="event">
 				<div class="spacer30"></div>
 				<div id="eventimage">
@@ -92,10 +101,6 @@
 						</a>				
 					</div>					
 				</div>
-			</div>
-			
+			</div>			
+			<!-- ***** EVENT ***** -->
 @endsection
-
-
-
-			

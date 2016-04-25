@@ -4,6 +4,7 @@
 
 	<head>
 		<meta charset="utf-8">
+		<!--<meta name="viewport" content="width=device-width; initial-scale=1.0;">-->
 
 		<title>CDF - {{ ucfirst($title) }}</title>
 		
@@ -31,14 +32,21 @@
 		<![endif]-->
 	</head>
 	
-	<body>
-		@include('layout.partials.header');
-		
-		<main>
+	<body id="body">
+@if (MOBILE == 0)
+		@include('layout.partials.header')
+@else 
+		@include('layout.partials.mobileheader')
+@endif
+
+		<main id="main">
 			@yield('main')
 		</main>
-		
-		@include('layout.partials.footer');
+@if (MOBILE == 1)
+		<script>$('#main').css('top', 100);</script>
+@endif		
+
+		@include('layout.partials.footer')
 	</body>
 	
 </html>

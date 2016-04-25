@@ -1,5 +1,10 @@
 
 var sliderHeight = $(window).height() - $('header').height() - 150;
+if (sliderHeight < 400)
+{
+	sliderHeight = 400;
+}
+
 var sliderWidth = $(window).width();
 $('.banner_overlay').css('height',sliderHeight);
 $('#slider').css('height',sliderHeight).css('width',sliderWidth);

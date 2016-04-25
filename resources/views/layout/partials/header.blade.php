@@ -1,4 +1,4 @@
-		<header>
+		<header id="header">
 			<nav id="topnav">
 				<ul>
 					<li class="topli">
@@ -8,7 +8,10 @@
 						<a class="topa" href="{{ languages(BRANDS, BRANDS_FR) }}">{{ languages(BRANDS, BRANDS_FR) }}</a>
 					</li>					
 					<li class="topli">
-						<a class="topa" href="{{ languages(JOURNAL, JOURNAL_FR) }}">journal</a>
+						<!--<a class="topa" href="{{ languages(JOURNAL, JOURNAL_FR) }}">journal</a>-->
+						<a class="topa" href="javascript:void(0);">
+							{{ languages(JOURNAL, JOURNAL_FR) }}
+						</a>
 						<ul class="submenu">
 							<li>
 								<a href="{{ languages(ANNOUNCEMENTSURL, ANNOUNCEMENTSURL_FR) }}">{{ languages(ANNOUNCEMENTS, ANNOUNCEMENTS_FR) }}</a>
@@ -22,7 +25,7 @@
 						</ul>
 					</li>
 					<li class="topli">
-						<a class="topa" href="{{ languages(ABOUTUSURL, ABOUTUSURL_FR) }}">{{ languages(ABOUTUS, ABOUTUS_FR) }}</a>
+						<a class="topa" href="javascript:void(0);">{{ languages(ABOUTUS, ABOUTUS_FR) }}</a>
 						<ul class="submenu">
 							<li>
 								<a href="{{ languages(CULTUREURL, CULTUREURL_FR) }}">

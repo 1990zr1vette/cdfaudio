@@ -1,7 +1,6 @@
 <?php namespace App\Http\Controllers;
 
 use \App\Models\Brand;
-
 use \App\Models\Announcement;
 use \App\Models\Editorial;
 use \App\Models\Event;
@@ -29,13 +28,6 @@ class HomeController extends Controller {
 	
 	public function homeblade()
 	{
-		$Event = Event::where('current', 1)->first();
-		
-		if (!$Event)
-		{
-			$Event = Event::where('active', 1)->first();
-		}
-		
 		return view('home/home')
 			->with('title', languages(HOME, HOME_FR))
 			->with('description', languages(DESCRIPTION, DESCRIPTION_FR))
@@ -44,6 +36,6 @@ class HomeController extends Controller {
 			->with('Brands', Brand::where('active', '1')->get())
 			->with('Announcement', Announcement::where('current',1)->first())
 			->with('Editorial', Editorial::where('current',1)->first())
-			->with('Event', $Event);
+			->with('Event', Event::where('current', 1)->first());
 	}
 }
